@@ -28,7 +28,7 @@ public class Login extends ActionBarActivity {
      */
     private final String host = "10.0.2.2";
     private final String port = "8080";
-    private final String domain = "cs122b-spring21-project2-login-cart-example";
+    private final String domain = "cs122b_spring21_project1_api_example_war";
     private final String baseURL = "http://" + host + ":" + port + "/" + domain;
 
 
@@ -59,10 +59,15 @@ public class Login extends ActionBarActivity {
                     // TODO: should parse the json response to redirect to appropriate functions
                     //  upon different response value.
                     Log.d("login.success", response);
+
+                    // TODO: convert string to json and check if login was successful or not
+
+
+
                     // initialize the activity(page)/destination
-                    Intent listPage = new Intent(Login.this, ListViewActivity.class);
+                    Intent mainPage = new Intent(Login.this, Main.class);
                     // activate the list page.
-                    startActivity(listPage);
+                    startActivity(mainPage);
                 },
                 error -> {
                     // error

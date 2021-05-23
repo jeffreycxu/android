@@ -4,6 +4,7 @@ public class Movie {
     private final String name;
     private final short year;
 
+
     public Movie(String name, short year) {
         this.name = name;
         this.year = year;
