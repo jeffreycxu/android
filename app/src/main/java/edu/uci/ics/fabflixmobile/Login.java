@@ -59,15 +59,20 @@ public class Login extends ActionBarActivity {
                     // TODO: should parse the json response to redirect to appropriate functions
                     //  upon different response value.
                     Log.d("login.success", response);
-
+                    if (response.equals("{}")) {
+                        message.setText("Wrong username or password");
+                    }
+                    else {
+                        // initialize the activity(page)/destination
+                        Intent mainPage = new Intent(Login.this, Main.class);
+                        // activate the list page.
+                        startActivity(mainPage);
+                    }
                     // TODO: convert string to json and check if login was successful or not
 
 
 
-                    // initialize the activity(page)/destination
-                    Intent mainPage = new Intent(Login.this, Main.class);
-                    // activate the list page.
-                    startActivity(mainPage);
+
                 },
                 error -> {
                     // error
